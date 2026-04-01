@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>没关系的</title>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: radial-gradient(circle at center, #2c2c3a, #0f0f1a);
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        overflow: hidden;
+    }
+
+    /* 柔光背景 */
+    body::before {
+        content: "";
+        position: absolute;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle, rgba(255,255,255,0.05), transparent 60%);
+        animation: drift 20s linear infinite;
+    }
+
+    @keyframes drift {
+        from { transform: translate(0,0); }
+        to { transform: translate(-20%, -20%); }
+    }
+
+    .text {
+        color: #ffffff;
+        font-size: 42px;
+        letter-spacing: 4px;
+        text-align: center;
+        opacity: 0;
+        animation: fadeIn 3s ease forwards, breathe 4s ease-in-out infinite;
+        text-shadow: 0 0 10px rgba(255,255,255,0.4),
+                     0 0 20px rgba(255,255,255,0.2);
+    }
+
+    @keyframes fadeIn {
+        to { opacity: 1; }
+    }
+
+    /* 呼吸感动画 */
+    @keyframes breathe {
+        0%, 100% {
+            transform: scale(1);
+            opacity: 0.85;
+        }
+        50% {
+            transform: scale(1.05);
+            opacity: 1;
+        }
+    }
+
+    /* 小雨效果 */
+    .rain {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(
+            rgba(255,255,255,0.1) 1px,
+            transparent 1px
+        );
+        background-size: 2px 20px;
+        animation: rain 0.5s linear infinite;
+        opacity: 0.2;
+    }
+
+    @keyframes rain {
+        from { background-position: 0 0; }
+        to { background-position: 0 20px; }
+    }
+
+</style>
+</head>
+
+<body>
+
+<div class="rain"></div>
+
+<div class="text">
+    没关系的<br>
+    我在这里
+</div>
+
+</body>
+</html>
