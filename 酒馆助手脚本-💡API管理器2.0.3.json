@@ -1,0 +1,17 @@
+{
+  "type": "script",
+  "enabled": true,
+  "name": "💡API管理器2.0.3",
+  "id": "6c957b09-0423-4434-83a9-0d9170066963",
+  "content": "import 'https://cdn.jsdmirror.com/gh/samiytaa/ST-AllInOneFloatOrb@main/ST-ApiManager/index-2.0.3.js'",
+  "info": "",
+  "button": {
+    "enabled": true,
+    "buttons": []
+  },
+  "data": {},
+  "export_with": {
+    "data": true,
+    "button": true
+  }
+}
